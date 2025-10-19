@@ -309,6 +309,12 @@
       @media (prefers-reduced-motion: reduce) {
         * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
       }
+
+
+
+      .kpi-item[data-display="none"] {
+        display:none;
+      }
     </style>
 </head>
 <body>
@@ -361,7 +367,9 @@
         </div>
 
         <div class="kpi" role="status" aria-live="polite">
+            
           <div class="kpi-item">
+
             <div class="kpi-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 16 16">
                 <path
@@ -371,11 +379,11 @@
               </svg>
             </div>
             <div>
-              <div class="kpi-num skeleton" id="member-count">000</div>
+              <div class="kpi-num" id="member-count">000</div>
               <div class="kpi-label">Aktuell online</div>
             </div>
           </div>
-          <div class="kpi-item" title="Widget Status">
+          <div data-display="none" class="kpi-item" title="Widget Status">
             <div class="kpi-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24">
                 <path
@@ -608,6 +616,20 @@
             loading="lazy"
           />
         </a>
+        <a
+          href="https://discord.com/users/928021462386892830"
+          target="_blank"
+          rel="noopener"
+          aria-label="Profil 928021462386892830"
+          style="width:300px"
+        >
+          <img
+            class="lanyard"
+            alt="Discord Lanyard 928021462386892830"
+            src="https://lanyard.cnrad.dev/api/928021462386892830?hideActivity=true&hideTimestamp=true&hideSpotify=true&hideTag=true&borderRadius=15px&theme=dark"
+            loading="lazy"
+          />
+        </a>
       </div>
     </section>
 
@@ -680,6 +702,7 @@
 
       const cntEl = document.getElementById("member-count");
       const widgetEl = document.getElementById("widget-state");
+      
       const animateCount = (to) => {
         const from = 0, dur = 800, start = performance.now();
         const step = (t) => {
@@ -705,7 +728,7 @@
           const count = Number(data?.presence_count ?? 0);
           if (Number.isFinite(count) && count >= 0) {
             animateCount(count);
-            widgetEl.textContent = "aktiv";
+            widgetEl.textContent = "erreichbar";
           } else {
             cntEl.textContent = "n/v";
             widgetEl.textContent = "keine Daten";
@@ -713,7 +736,7 @@
         } catch (err) {
           console.error("Widget-Fehler:", err);
           cntEl.textContent = "— — —";
-          widgetEl.textContent = "inaktiv";
+          widgetEl.textContent = "Nicht erreichbar";
           cntEl.classList.remove("skeleton");
         }
       })();
