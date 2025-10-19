@@ -246,8 +246,14 @@
       .rules p { margin: 8px 0 4px; line-height: 1.55; }
 
       .team {
-        display: grid; gap: 12px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        display: flex; gap: 12px;
+        flex-direction: column;
+        
+        
+      }
+      .team a {
+        size: 150px;
+        
       }
       /* LANYARD FIX – kein gestauchtes Bild mehr */
       .lanyard {
@@ -570,31 +576,35 @@
     </section>
 
     <section id="team" class="card section-card" aria-labelledby="team-title">
-      <div class="section-title"><h2 id="team-title">Team</h2></div>
+      <div class="section-title"><h2 id="team-title">Team & Members</h2></div>
       <div class="team">
-        <a
-          href="https://discord.com/users/928021462386892830"
-          target="_blank"
-          rel="noopener"
-          aria-label="Profil 928021462386892830"
-        >
-          <img
-            class="lanyard"
-            alt="Discord Lanyard 928021462386892830"
-            src="https://lanyard.cnrad.dev/api/928021462386892830?hideActivity=true&hideTimestamp=true&hideSpotify=true&hideTag=true&borderRadius=15px&theme=dark"
-            loading="lazy"
-          />
-        </a>
+       <h3>👑👑 &#9679;&nbsp;&nbsp;&nbsp;OWNER</h3>
         <a
           href="https://discord.com/users/1222617763063926938"
           target="_blank"
           rel="noopener"
           aria-label="Profil 1222617763063926938"
+          style="width:300px;"
         >
           <img
             class="lanyard"
             alt="Discord Lanyard 1222617763063926938"
             src="https://lanyard.cnrad.dev/api/1222617763063926938?hideActivity=true&hideTimestamp=true&hideSpotify=true&hideTag=true&borderRadius=15px&theme=dark"
+            loading="lazy"
+          />
+        </a>
+        <h3>🤝🤝 &#9679;&nbsp;&nbsp;&nbsp;Teamfreund</h3>
+        <a
+          href="https://discord.com/users/1255805143132409909"
+          target="_blank"
+          rel="noopener"
+          aria-label="Profil 1222617763063926938"
+          style="width:300px"
+        >
+          <img
+            class="lanyard"
+            alt="Discord Lanyard 1222617763063926938"
+            src="https://lanyard.cnrad.dev/api/1255805143132409909?hideActivity=true&hideTimestamp=true&hideSpotify=true&hideTag=true&borderRadius=15px&theme=dark"
             loading="lazy"
           />
         </a>
@@ -608,12 +618,12 @@
 
     <footer>
       Made with ❤️ & Ordnung. ·
-      <a href="https://dcs.lol/deutschland" target="_blank" rel="noopener">Discord</a>
+      <a href="https://dcs.lol/lokrogames" target="_blank" rel="noopener">Discord</a>
     </footer>
 
     <a
       class="btn btn-primary sticky-cta"
-      href="https://dcs.lol/deutschland"
+      href="https://dcs.lol/lokrogames"
       target="_blank"
       rel="noopener"
       aria-label="Discord Einladung öffnen"
